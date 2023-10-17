@@ -7,13 +7,13 @@ import Register from "../page/Register";
 import NotFount from "../page/NotFount";
 import Layout from "../components/layouts/Layout";
 import useAuth from "../auth/useAuth";
-import Account from "../page/Account";
 import Projects from "../page/Projects";
 import Project from "../page/Project";
 import AdminUser from "../page/admin/AdminUser";
 import ProtecteRoute from "./ProtecteRoute";
 import PublicRoute from "./PublicRoute";
 import AdminRoute from "./AdminRoute";
+import Account from "../page/AccountPage/Account";
 
 const AppRouter = () => {
   const { user } = useAuth();
