@@ -4,6 +4,7 @@ import useAuth from "../../auth/useAuth";
 import DeleteCuenta from "./components/DeleteCuenta";
 import CambioPassword from "./components/CambioPassword";
 import { useModal } from "../../hook/useModal";
+import EditCuenta from "./components/EditCuenta";
 
 const Account = () => {
   /* Llama al usuario del contexto */
@@ -14,6 +15,8 @@ const Account = () => {
   const [isOpenDeleteModal, openDeleteModal, closeDeleteModal] = useModal();
   const [isOpenChangePassModal, openChangePassModal, closeChangePassModal] =
     useModal();
+
+  const [isOpenEditModal, openEditModal, closeEditModal] = useModal();
 
   return (
     <>
@@ -52,7 +55,8 @@ const Account = () => {
 
               {/* Opciones de la cuenta */}
 
-              <Button variant="warning">Editar cuenta</Button>
+              <Button variant="warning" className="mt-2"
+              onClick={openEditModal}>Editar cuenta</Button>
 
               {/* Boton para cambiar el password */}
               <Button
@@ -83,6 +87,11 @@ const Account = () => {
       <CambioPassword
         isOpenChangePassModal={isOpenChangePassModal}
         closeChangePassModal={closeChangePassModal}
+      />
+
+      <EditCuenta
+        isOpenEditModal={isOpenEditModal}
+        closeEditModal={closeEditModal}
       />
     </>
   );
